@@ -86,10 +86,10 @@
   <!-- Tasks List -->
   <div class="tasks-container">
     <div class="tasks-header">
-      <h2>Tasks ({{ tasks.length }})</h2>
+      <h2>Tasks ({{ tasks?.length || 0 }})</h2>
     </div>
 
-    <div class="tasks-grid" *ngIf="tasks.length > 0; else noTasks">
+    <div class="tasks-grid" *ngIf="(tasks?.length || 0) > 0; else noTasks">
       <div class="task-card" *ngFor="let task of tasks">
         <div class="task-header">
           <h3>{{ task.title }}</h3>
